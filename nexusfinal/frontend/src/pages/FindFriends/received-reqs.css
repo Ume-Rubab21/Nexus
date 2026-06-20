@@ -1,0 +1,118 @@
+.received-requests-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: linear-gradient(135deg, #F7AEF8, #B388EB);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.no-requests-box {
+  background: linear-gradient(135deg, #FF9A9E, #c06a53);
+  color: #333;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+
+.received-requests-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2em;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.request-card {
+  background: #f9f9f9; /* porcelain look */
+  color: #333;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.request-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.request-card p {
+  margin: 6px 0;
+  font-size: 1em;
+}
+
+.clickable {
+  cursor: pointer;
+  color: #8093F1;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.clickable:hover {
+  color: #72DDF7;
+}
+
+.button-group {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn-accept {
+  padding: 8px 16px;
+  background: #72DDF7;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-accept:hover {
+  background: #4fc3f7;
+  transform: scale(1.05);
+}
+
+.btn-reject {
+  padding: 8px 16px;
+  background: #ff4d4f;
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-reject:hover {
+  background: #d9363e;
+  transform: scale(1.05);
+}
+
+.loading-text,
+.error-text,
+.info-text {
+  text-align: center;
+  font-size: 1.15em;
+  font-weight: 500;
+  margin-top: 25px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}

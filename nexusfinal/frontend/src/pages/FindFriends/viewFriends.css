@@ -1,0 +1,104 @@
+:root{
+  --plum: #F7AEF8;
+  --lavender: #B388EB;
+  --wisteria: #8093F1;
+  --sky: #72DDF7;
+  --deep-purple: #6A4FB6;
+  --soft-pink: #E9A5FF;
+
+  --porcelain: #FAFBFD;
+  --card-bg: white;
+  --muted: rgba(17,24,39,0.55);
+  --text-dark: #0F1720;
+  --shadow: 0 14px 40px rgba(15,23,40,0.08);
+}
+
+/* Main container */
+.vf-root{ 
+  max-width: 1100px;
+  margin: 36px auto;
+  padding: 28px;
+  background: linear-gradient(180deg, var(--porcelain) 0%, #ffffff 100%);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+}
+
+/* REMOVE header completely */
+.vf-header{
+  display: none !important;
+}
+
+/* Grid */
+.vf-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* Card */
+.vf-card{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 16px;
+  background: var(--card-bg);
+  border: 1px solid rgba(137,119,227,0.10);
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(124,116,183,0.06);
+  transition: 0.22s ease;
+}
+
+/* Hover effect (stronger colors + slight lift) */
+.vf-card:hover{
+  transform: translateY(-7px);
+  border-color: var(--lavender);
+  box-shadow: 0 22px 58px rgba(128,147,241,0.25);
+}
+
+/* Avatar (rectangle, bold gradient) */
+.vf-avatar{
+  width: 74px;
+  height: 74px;
+  min-width: 74px;
+  min-height: 74px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--plum), var(--lavender), var(--wisteria));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 26px;
+  box-shadow: inset 0 -6px 14px rgba(0,0,0,0.08);
+}
+
+/* Text */
+.vf-name{
+  margin:0;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--deep-purple);
+}
+
+.vf-email{
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Hide status + department + view button */
+.vf-badge,
+.vf-dept,
+.vf-open-btn{
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 560px) {
+  .vf-root { padding: 18px; }
+  .vf-avatar { width:60px; height:60px; }
+  .vf-name { font-size: 15px; }
+}

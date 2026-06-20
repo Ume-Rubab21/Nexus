@@ -1,0 +1,36 @@
+.view-friends-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 25px 30px;
+  background: linear-gradient(135deg, #F7AEF8, #B388EB);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.view-friends-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2em;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.no-requests-box {
+  /* Styles are applied inline to match sent/received requests exactly */
+}
+
+/* Responsive */
+@media (max-width: 560px) {
+  .view-friends-container {
+    padding: 18px;
+    margin: 20px auto;
+  }
+  .view-friends-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+}
+

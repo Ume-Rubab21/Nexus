@@ -1,0 +1,126 @@
+/* ChatSidebar.css - stylish friend list */
+
+/* reuse color variables */
+:root{
+  --pink: #F7AEF8;
+  --lavender: #B388EB;
+  --indigo: #8093F1;
+  --cyan: #72DDF7;
+  --paper: #F4F4ED;
+  --muted: #6b7280;
+  --surface: #ffffff;
+}
+
+/* Sidebar container */
+.chat-sidebar {
+  width: 300px;
+  background: linear-gradient(180deg, var(--paper), #fff);
+  border-right: 1px solid rgba(12,18,30,0.04);
+  padding: 18px;
+  box-shadow: 0 2px 18px rgba(22,28,49,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Title */
+.sidebar-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--indigo);
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* friend button card */
+.friend-btn {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  background: linear-gradient(180deg,#8093F1, rgba(196,196,255,0.03));
+  border-radius: 12px;
+  border: 1px solid rgba(13,24,45,0.04);
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms;
+  text-align: left;
+  flex-direction: column;
+}
+
+.friend-btn:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(90deg, rgba(247,174,248,0.08), rgba(179,136,235,0.06));
+  box-shadow: 0 8px 26px rgba(123,96,208,0.08);
+}
+
+/* friend top row: name and online dot */
+.friend-btn strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+}
+
+/* online dot */
+.friend-btn .online-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: linear-gradient(180deg,#2ee6a0,#20b36f);
+  box-shadow: 0 0 6px rgba(46,230,160,0.18);
+  display: inline-block;
+}
+
+/* email / preview row */
+.friend-btn .email {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+  display: block;
+}
+
+/* show last message preview - if you later pass .preview element */
+.friend-btn .preview {
+  font-size: 13px;
+  color: #475569;
+  opacity: 0.9;
+  margin-top: 6px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Active friend highlight - you can toggle this class in TSX when a friend is selected */
+/* Active friend highlight */
+.friend-btn.active {
+  background: linear-gradient(180deg, #B388EB, #8093F1); /* darker lavender */
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(128,147,241,0.25);
+  transform: translateY(0);
+}
+
+.friend-btn.active strong,
+.friend-btn.active .email {
+  color: #fff;
+}
+
+
+/* scrollbar styling */
+.chat-sidebar::-webkit-scrollbar,
+.messages-box::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-sidebar::-webkit-scrollbar-thumb,
+.messages-box::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(179,136,235,0.45), rgba(128,147,241,0.45));
+  border-radius: 999px;
+}
+
+/* small responsive tweaks */
+@media (max-width: 880px) {
+  .chat-sidebar { width: 220px; padding: 14px; }
+}

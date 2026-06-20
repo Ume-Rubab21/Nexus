@@ -1,0 +1,162 @@
+/* GLOBAL WRAPPER --------------------------------------------------------- */
+
+.profile-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f7aef8 0%, #b388eb 40%, #8093f1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* FLOATING ICONS — Original style extended -------------------------------- */
+
+.floating-icon {
+  position: absolute;
+  font-size: 38px;
+  opacity: 0.35;
+  animation: floatAnim 6s infinite ease-in-out;
+}
+
+/* ORIGINAL ones */
+.icon1 { top: 10%; left: 15%; }
+.icon2 { top: 70%; right: 18%; animation-delay: 1s; }
+.icon3 { bottom: 10%; left: 60%; animation-delay: 2s; }
+
+/* NEW subtle stars (same style as icon1) */
+.starA { top: 25%; left: 8%; animation-delay: 1.2s; }
+.starB { top: 55%; right: 10%; animation-delay: 2.4s; }
+
+/* NEW subtle clouds (same style as icon2 cloud-look) */
+.cloudA { top: 30%; right: 25%; font-size: 50px; opacity: 0.25; animation-delay: 1.8s; }
+.cloudB { bottom: 15%; left: 20%; font-size: 48px; opacity: 0.22; animation-delay: 0.7s; }
+
+@keyframes floatAnim {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0px); }
+}
+
+
+
+/* MAIN CARD -------------------------------------------------------------- */
+
+.create-profile-card {
+  width: 100%;
+  max-width: 650px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 40px 35px;
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  text-align: center;
+}
+
+/* TITLES ----------------------------------------------------------------- */
+
+.create-profile-card h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 15px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+/* MESSAGE BOX ------------------------------------------------------------ */
+
+.message-box {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* FORM ------------------------------------------------------------------- */
+
+.profile-form {
+  display: grid;
+  gap: 15px;
+}
+
+/* UPDATED INPUTS — STRONGER, MORE READABLE ------------------------------ */
+
+.profile-form input,
+.profile-form textarea {
+  padding: 14px 15px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.85); /* stronger bg for readability */
+  color: #2b2b2b; /* darker readable text */
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.profile-form input::placeholder,
+.profile-form textarea::placeholder {
+  color: rgba(70, 70, 70, 0.75);
+  font-weight: 500;
+}
+
+.profile-form input:focus,
+.profile-form textarea:focus {
+  background: #ffffff;
+  border-color: #72ddf7;
+  box-shadow: 0 0 10px rgba(114, 221, 247, 0.7);
+  outline: none;
+}
+
+/* BUTTON ROW ------------------------------------------------------------- */
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.primary-btn {
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  background: #72ddf7;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.primary-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  background: #ffffff;
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cancel-btn {
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  background: #b388eb;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cancel-btn:hover {
+  transform: translateY(-3px);
+  background: #f7aef8;
+}

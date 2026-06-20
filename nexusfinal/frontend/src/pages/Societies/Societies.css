@@ -1,0 +1,354 @@
+/* Modern CSS Reset and Variables */
+:root {
+  --plum: #F7AEF8;
+  --bright-lavender: #B388EB;
+  --wisteria-blue: #8093F1;
+  --sky-blue: #72DDF7;
+  --text-primary: #FFFFFF;
+  --text-secondary: #E2E8F0;
+  --text-light: #CBD5E0;
+  --bg-primary: #F8F9FA;
+  --bg-secondary: #FFFFFF;
+  --bg-gradient: linear-gradient(135deg, var(--plum) 0%, var(--wisteria-blue) 50%, var(--sky-blue) 100%);
+  --border-light: rgba(115, 115, 115, 0.2);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page Layout */
+.societies-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #F5F0FF 0%, #F3EBFF 50%, #F0E6FF 100%);
+  padding: 40px 20px;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.societies-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.societies-header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.societies-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: var(--bg-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+  letter-spacing: -0.025em;
+}
+
+.societies-subtitle {
+  font-size: 1.125rem;
+  color: #6B7280;
+  font-weight: 400;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.societies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+/* Society Card */
+.society-card {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.society-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  pointer-events: none;
+}
+
+.society-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-8px);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.card-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #2D3748;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+.society-card:hover .card-badge {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin: 0;
+  margin-bottom: 4px;
+  word-wrap: break-word;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Content */
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.card-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -moz-box;
+  -moz-line-clamp: 4;
+  -moz-box-orient: vertical;
+  line-clamp: 4;
+  box-orient: vertical;
+  margin: 0;
+}
+
+/* Meta Information */
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 20px;
+  margin-top: auto;
+}
+
+.meta-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meta-label {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta-value {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Loading States */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 20px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(183, 136, 235, 0.3);
+  border-top: 3px solid var(--bright-lavender);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  color: #6B7280;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/* Error States */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 16px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.error-icon {
+  font-size: 3rem;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
+.error-text {
+  color: #6B7280;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .societies-page {
+    padding: 20px 16px;
+    background: linear-gradient(135deg, #F5F0FF 0%, #F3EBFF 100%);
+  }
+  
+  .societies-title {
+    font-size: 2.25rem;
+  }
+  
+  .societies-subtitle {
+    font-size: 1rem;
+  }
+  
+  .societies-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0;
+  }
+  
+  .society-card {
+    padding: 20px;
+  }
+  
+  .card-header {
+    gap: 12px;
+  }
+  
+  .card-badge {
+    width: 50px;
+    height: 50px;
+    font-size: 1.375rem;
+  }
+  
+  .card-title {
+    font-size: 1.375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .societies-header {
+    margin-bottom: 40px;
+  }
+  
+  .societies-title {
+    font-size: 2rem;
+  }
+  
+  .card-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .meta-item {
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .society-card {
+    padding: 18px;
+  }
+}
+
+/* Fallback for line-clamp in older browsers */
+@supports not ((-webkit-line-clamp: 4) or (line-clamp: 4)) {
+  .card-description {
+    max-height: 6.4em;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .card-description::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 70%;
+    height: 1.6em;
+    background: linear-gradient(to right, transparent, currentColor 80%);
+    pointer-events: none;
+  }
+  
+  .society-card .card-description::after {
+    background: linear-gradient(to right, transparent, var(--bg-secondary) 80%);
+  }
+}
