@@ -149,10 +149,10 @@ npm start
 
 ## 👩‍💻 Authors
 
-Uma E Rubab
-Ayesha Khalid
-Easha Javed
-Dania Athar
+- Uma E Rubab
+- Ayesha Khalid
+- Easha Javed
+- Dania Athar
 
 ---
 
